@@ -23,14 +23,18 @@ TBitField::~TBitField()
 {
 }
 
-int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
+int TBitField::GetMemIndex(const int n) const
 {
-    return FAKE_INT;
+	if (!(n > 0 && n < BitLen)) throw - 2;
+
+	return n / 32;
 }
 
-TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
+TELEM TBitField::GetMemMask(const int n) const
 {
-    return FAKE_INT;
+	if (!(n > 0 && n < BitLen)) throw - 2;
+
+	return 1 << (n % 32);
 }
 
 // доступ к битам битового поля
