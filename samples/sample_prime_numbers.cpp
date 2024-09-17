@@ -17,7 +17,10 @@
 int main()
 {
     TBitField bf(50);
+    cout << bf.GetBit(35) << endl;
     bf.SetBit(35);
+    cout << bf.GetBit(35) << endl;
+    cout << bf;
 
     /*
   int n, m, k, count;

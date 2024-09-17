@@ -43,14 +43,14 @@ TBitField::~TBitField()
 
 int TBitField::GetMemIndex(const int n) const
 {
-	if (!(n > 0 && n < BitLen)) throw - 2;
+	if (!(n >= 0 && n < BitLen)) throw - 2;
 
 	return n / 32;
 }
 
 TELEM TBitField::GetMemMask(const int n) const
 {
-	if (!(n > 0 && n < BitLen)) throw - 2;
+	if (!(n >= 0 && n < BitLen)) throw - 2;
 
 	return 1 << (n % 32);
 }
@@ -76,7 +76,7 @@ int TBitField::GetBit(const int n) const // получить значение б
 {
 	TELEM mask = GetMemMask(n);
 
-	return mask == pMem[GetMemIndex(n)] & mask;
+	return mask == (pMem[GetMemIndex(n)] & mask);
 }
 
 // битовые операции
@@ -132,5 +132,9 @@ istream &operator>>(istream &istr, TBitField &bf) // ввод
 
 ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
 {
-    return ostr;
+	for (int i = 0; i < bf.GetLength(); i++) {
+		ostr << bf.GetBit(i);
+	}
+
+	return ostr;
 }
