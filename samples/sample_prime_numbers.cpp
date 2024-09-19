@@ -16,13 +16,15 @@
 
 int main()
 {
-    TBitField bf(50);
-    cout << bf.GetBit(35) << endl;
-    bf.SetBit(35);
-    cout << bf.GetBit(35) << endl;
-    cout << bf;
+    /*TBitField a(10), b(33);
+    a.SetBit(2);
+    b.SetBit(3);
+    TBitField c = a | b;
+    cout << c << endl;
 
-    /*
+    c = c & b;
+    cout << c;*/
+
   int n, m, k, count;
 
   setlocale(LC_ALL, "Russian");
@@ -42,7 +44,7 @@ int main()
         if (s.GetBit(k))
           s.ClrBit(k);
   // оставшиеся в s элементы - простые числа
-  cout << endl << "Печать множества некратных чисел" << endl << s << endl;
+  //cout << endl << "Печать множества некратных чисел" << endl << s << endl;
   cout << endl << "Печать простых чисел" << endl;
   count = 0;
   k = 1;
@@ -50,13 +52,12 @@ int main()
     if (s.GetBit(m))
     {
       count++;
-      cout << setw(3) << m << " ";
-      if (k++ % 10 == 0)
-        cout << endl;
+      //cout << setw(3) << m << " ";
+      //if (k++ % 10 == 0)
+      //  cout << endl;
     }
   cout << endl;
   cout << "В первых " << n << " числах " << count << " простых" << endl;
-  */
 }
 #else
 
