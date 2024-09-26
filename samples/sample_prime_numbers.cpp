@@ -7,8 +7,9 @@
 
 #include <iomanip>
 
-// #define USE_SET // Использовать класс TSet,
+#define USE_SET // Использовать класс TSet,
                 // закоментировать, чтобы использовать битовое поле
+#include "tset.h"
 
 #ifndef USE_SET // Использовать класс TBitField
 
@@ -61,7 +62,7 @@ int main()
 }
 #else
 
-#include "tset.h"
+//#include "tset.h"
 
 int main()
 {

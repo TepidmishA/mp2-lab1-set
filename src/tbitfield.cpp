@@ -117,17 +117,6 @@ int TBitField::operator==(const TBitField &bf) const // сравнение
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение
 {
-	/*if (bf.BitLen == BitLen) return false;
-
-	for (int i = 0; i < MemLen - 1; i++) {
-		if (bf.pMem[i] == pMem[i]) return false;
-	}
-
-	for (int i = sizeof(TELEM) * 8 * (MemLen - 1); i < BitLen; i++) {
-		if (bf.GetBit(i) == GetBit(i)) return false;
-	}
-
-	return true;*/
 
 	return !(*this == bf);
 }
